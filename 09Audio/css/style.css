@@ -1,0 +1,87 @@
+body {
+	font-family: "微软雅黑";
+}
+
+.shadeDiv {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.5);
+	left: 0;
+	top: 0;
+}
+
+.alertBox {
+	position: fixed;
+	width: 320px;
+	left: 0;
+	top: 190px;
+	z-index: 1000;
+}
+
+.align_right {
+	text-align: right;
+}
+
+.alertBox .content {
+	font-size: 16px;
+	color: #737373;
+	padding-bottom: 20px;
+}
+
+.showAlertBox {
+	animation: showAlertBox 0.3s;
+	-webkit-animation: showAlertBox 0.3s;
+}
+.hideAlertBox{
+	animation: hideAlertBox 0.3s;
+	-webkit-animation: hideAlertBox 0.3s;
+}
+
+@keyframes showAlertBox {
+	0% {
+		top: 50px;
+	}
+	80% {
+		top: 200px;
+	}
+	100% {
+		top: 180px;
+	}
+}
+
+@-webkit-keyframes showAlertBox {
+	0% {
+		top: 50px;
+	}
+	80% {
+		top: 200px;
+	}
+	100% {
+		top: 180px;
+	}
+}
+
+@keyframes hideAlertBox {
+	0% {
+		top: 180px;
+	}
+	20% {
+		top: 200px;
+	}
+	100% {
+		top: 50px;
+	}
+}
+@-webkit-keyframes hideAlertBox {
+	0% {
+		top: 180px;
+	}
+	20% {
+		top: 200px;
+	}
+	100% {
+		top: 50px;
+	}
+}

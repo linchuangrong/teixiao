@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="test">123</div>
+		<script>
+			var worker = new Worker("worker.js");
+			worker.postMessage({
+				baseNumber: 1000
+			});
+			worker.onmessage = function(event) {
+				document.getElementById("test").innerHTML = event.data;
+			};
+			alert("现在弹框，worker还没执行完毕，不要关闭这弹框，看div里的字是否等下会改变");
+		</script>
+	</body>
+
+</html>

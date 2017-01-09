@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>javascript 一个页面多个tab选项卡效果</title>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<script>
+			window.onload = function() {
+				var tab = new Tab("tabMain");
+				tab.init();
+			}
+
+			function Tab(id) {
+				var tabDom = document.getElementById(id);
+				this.liArray = tabDom.getElementsByTagName("li"); //li数组对象
+				this.divArray = tabDom.getElementsByClassName("tabSide"); //div数组对象
+			}
+			Tab.prototype.init = function() {
+				//用_this存储this,避免下文出现this与Tab冲突
+				var _this = this;
+				for(var i = 0; i < _this.liArray.length; i++) {
+					//给li添加点击事件
+					(function(index) {
+						_this.liArray[index].onclick = function() {
+							for(var j = 0; j < _this.divArray.length; j++) {
+								if(index == j) {
+									_this.liArray[j].className="active";
+									_this.divArray[j].style.display = "block";
+								} else {
+									_this.liArray[j].className="";
+									_this.divArray[j].style.display = "none";
+								}
+								console.log(_this.liArray[j].className);
+							}
+						}
+					})(i);
+
+				}
+			}
+		</script>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			.tabMenu {
+				width: 300px;
+				margin: 50px auto 0 auto;
+			}
+			
+			.tabMenu ul {
+				display: block;
+				overflow: hidden;
+				width: 300px;
+				height: 40px;
+				background: #eee;
+			}
+			
+			.tabMenu ul li {
+				cursor: pointer;
+				display: block;
+				float: left;
+				width: 100px;
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
+			}
+			
+			.tabMenu ul li.active {
+				background: #f00;
+				color: #fff;
+			}
+			
+			.tabMenu .tabSide {
+				display: none;
+				padding: 10px;
+				line-height: 20px;
+				white-space: pre-wrap;
+				word-break: break-all;
+				width: 278px;
+				border: solid 1px #eee;
+			}
+			
+			.tabMenu div.active {
+				display: block;
+				padding: 10px;
+				line-height: 20px;
+				white-space: pre-wrap;
+				word-break: break-all;
+				width: 278px;
+				border: solid 1px #eee;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="tabMain" class="tabMenu">
+			<ul>
+				<li class="active">前端菜鸟</li>
+				<li>前端资讯</li>
+				<li>前端开发</li>
+			</ul>
+			<div class="tabSide active">前端菜鸟是为前端初学者提供div+css、html5+css3、JavaScript、jquery、前端web开发、移动端html5开发集一体的前端知识以及前端资讯网站！学习前端，从这里开始！</div>
+			<div class="tabSide">相信来到我的文章的人大多数都是对SEO了解很少的人，不过没有关系，看完我以下的类容解说，一定会把你从一个门外汉拉进SEO知识的海洋。</div>
+			<div class="tabSide">首先我们来认识什么是seo? SEO,是Search Engine Optimization的简写，中文翻译过来就是搜索引擎优化，指为了提升网页在搜索引擎自然搜索结果中的收录数量以及排序位置而做的优化行为，这一行为目的，是为了从搜索引擎中获得免费流量，以及更好的展现形象。</div>
+		</div>
+
+	</body>
+
+</html>

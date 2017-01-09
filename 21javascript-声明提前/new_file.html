@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a="haha";
+			function kk(){
+				console.log(typeof a);
+				var a="456";
+				console.log(typeof a);
+			}
+			kk();
+			
+			//上述代码等于以下代码
+			var a="haha";
+			function kk(){
+				var a;
+				console.log(typeof a);
+				a="456";
+				console.log(typeof a);
+			}
+			kk();
+			console.log(a);
+		</script>
+	</body>
+</html>

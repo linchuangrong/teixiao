@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<div>
+			<h3>Demo - Click any image</h3>
+			<img id="ClickImage1" src="http://arch.pconline.com.cn//pcedu/empolder/wz/javascript/0607/other/drag_drop_spade.gif" name=Spade>
+			<img id="ClickImage2" src="http://arch.pconline.com.cn//pcedu/empolder/wz/javascript/0607/other/drag_drop_heart.gif" name=Heart>
+			<img id="ClickImage3" src="http://arch.pconline.com.cn//pcedu/empolder/wz/javascript/0607/other/drag_drop_diamond.gif" name=Diamond>
+			<img id="ClickImage4" src="http://arch.pconline.com.cn//pcedu/empolder/wz/javascript/0607/other/drag_drop_club.gif" name=Club>
+			<br>
+			You clicked on:
+			<input id=ClickImage type="text">
+		</div>
+	</body>
+
+	<script>
+		function mouseDown(ev) {
+			ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
+
+			if(target.onmousedown || target.getAttribute('DragObj')) {
+				return false;
+			}
+		}
+
+		function makeClickable(item) {
+			if(!item) return;
+			item.onmousedown = function(ev) {
+				document.getElementById('ClickImage').value = this.name;
+			}
+		}
+		document.onmousedown = mouseDown;
+		window.onload = function() {
+			makeClickable(document.getElementById('ClickImage1'));
+			makeClickable(document.getElementById('ClickImage2'));
+			makeClickable(document.getElementById('ClickImage3'));
+			makeClickable(document.getElementById('ClickImage4'));
+		}
+	</script>
+
+</html>

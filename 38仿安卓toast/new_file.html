@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-color: #2C7EB4;
+			}
+			
+			.toast {
+				position: fixed;
+				left: 0;
+				bottom: 40px;
+				display: inline-block;
+				background: rgba(0, 0, 0, 0.6);
+				color: rgb(255, 255, 255);
+				font-size: 14px;
+				line-height: 20px;
+				text-align: center;
+				max-width: 240px;
+				margin: 0 auto;
+				padding: 10px 15px;
+				border-radius: 10px;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+	</head>
+
+	<body>
+		<div id="toast" class="toast">提示语句</div>
+		<script type="text/javascript">
+			//弹出下方tip小提示框的功能
+			var toast = null;
+			(function() {
+				var $toast = $("#toast");
+				var toastTimeout = null;
+				toast = {
+					show: function(text, delayTime) {
+						clearTimeout(toastTimeout);
+						$toast.stop(true, true).html(text).css("left", ($("body").width() - $toast.outerWidth()) / 2 + "px");
+						$toast.fadeIn(1000, function() {
+							toastTimeout = setTimeout(function() {
+								toast.hide();
+							}, !!delayTime ? delayTime : 2000);
+						});
+					},
+					hide: function() {
+						$toast.fadeOut(1000);
+					}
+				};
+			})();
+		</script>
+	</body>
+
+</html>

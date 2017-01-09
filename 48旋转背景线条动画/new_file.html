@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			
+			.box {
+				width: 100%;
+				height: 150px;
+				background: #007AFF;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.left {
+				width: 0px;
+				height: 150px;
+				float: left;
+			}
+			
+			.right {
+				width: 0px;
+				height: 150px;
+				float: right;
+			}
+			
+			.animate-content {
+				position: relative;
+			}
+			
+			.animate-cell {
+				width: 3000px;
+				height: 3000px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(0deg);
+				text-align: center;
+			}
+			
+			.animate-cell:nth-child(1) {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+			
+			.animate-cell:nth-child(2) {
+				transform: translate(-50%, -50%) rotate(30deg);
+			}
+			
+			.animate-cell:nth-child(3) {
+				transform: translate(-50%, -50%) rotate(60deg);
+			}
+			
+			.animate-cell:nth-child(4) {
+				transform: translate(-50%, -50%) rotate(90deg);
+			}
+			
+			.animate-cell:nth-child(5) {
+				transform: translate(-50%, -50%) rotate(120deg);
+			}
+			
+			.animate-cell:nth-child(6) {
+				transform: translate(-50%, -50%) rotate(150deg);
+			}
+			
+			.animate-cell div {
+				width: 10px;
+				height: 100%;
+				display: inline-block;
+				transform: rotate(0deg);
+				background: rgba(255, 255, 255, 0.2);
+				animation: animateRotate1 20s linear infinite;
+			}
+			
+			.right .animate-cell div {
+				animation: animateRotate2 20s linear infinite;
+			}
+			
+			@keyframes animateRotate1 {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			
+			@-webkit-keyframes animateRotate1 {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes animateRotate2 {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(-360deg);
+				}
+			}
+			
+			@-webkit-keyframes animateRotate2 {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(-360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="left animate-content">
+				<div class="animate-cell">
+					<div>1</div>
+				</div>
+				<div class="animate-cell">
+					<div>2</div>
+				</div>
+				<div class="animate-cell">
+					<div>3</div>
+				</div>
+				<div class="animate-cell">
+					<div>4</div>
+				</div>
+				<div class="animate-cell">
+					<div>5</div>
+				</div>
+				<div class="animate-cell">
+					<div>6</div>
+				</div>
+			</div>
+			<!--<div class="right animate-content">
+				<div class="animate-cell">
+					<div>1</div>
+				</div>
+				<div class="animate-cell">
+					<div>2</div>
+				</div>
+				<div class="animate-cell">
+					<div>3</div>
+				</div>
+				<div class="animate-cell">
+					<div>4</div>
+				</div>
+				<div class="animate-cell">
+					<div>5</div>
+				</div>
+				<div class="animate-cell">
+					<div>6</div>
+				</div>
+			</div>-->
+
+		</div>
+	</body>
+
+</html>

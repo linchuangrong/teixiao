@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var clockDom = document.getElementById("clock");
+				function clock(year, month, date) {
+					var oDate = new Date();
+					oDate.setFullYear(year, month - 1, date);
+					oDate.setHours(0, 0, 0, 0);
+					var oNow = new Date();
+					var ts = oNow.getTime();
+					var fs = oDate.getTime()
+					var s = parseInt((fs - ts) / 1000);
+					var d = parseInt(s / 86400);
+					s %= 86400;
+					var h = parseInt(s / 3600);
+					s %= 3600;
+					var m = parseInt(s / 60);
+					s %= 60;
+					clockDom.innerHTML = "离" + year + "年" + month + "月" + date + "日" + "还有多少天:" + "<b style='color:red;'>" + d + "</b>" + '天' + "<b style='color:red;'>" + h + "</b>" + '小时' + "<b style='color:red;'>" + m + "</b>" + '分钟' + "<b style='color:red;'>" + s + "</b>" + '秒';
+				}
+				setInterval(function() {
+					clock(2016, 12, 30);
+				}, 1000);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="clock"></div>
+	</body>
+
+</html>

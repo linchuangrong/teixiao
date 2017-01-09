@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body,p,h1,h2,h3,h4,h5,h6 {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.triangle {
+				width: auto;
+				height: 0px;
+				overflow: hidden;
+				font-size: 0px;
+				border-top-width: 50px;
+				border-right-width: 0px;
+				border-bottom-width: 50px;
+				border-left-width: 0px;
+				border-top-color: transparent;
+				border-right-color: #00CCCC;
+				border-bottom-color: #00CCCC;
+				border-left-color: transparent;
+				border-style: solid;
+			}
+			
+			.triangle1 {
+				border-top-color: transparent;
+				border-right-color: #00CCCC;
+				border-bottom-color: #00CCCC;
+				border-left-color: transparent;
+			}
+			
+			.triangle2 {
+				border-top-color: #00CCCC;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+				border-left-color: #00CCCC;
+			}
+			
+			#content {
+				background: #00CCCC;
+				width: auto;
+				height: 600px;
+				padding-top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="triangle triangle1"></div>
+		<div id="content">
+			<p>Hello</p>
+		</div>
+		<div class="triangle triangle2"></div>
+	</body>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+		$(function() {
+			$(window).resize(function() {
+				var triangle = $(".triangle");
+				var outWidth = parseFloat($("body").width()) / 2;
+				triangle.css("border-left-width", outWidth + "px");
+				triangle.css("border-right-width", outWidth + "px");
+			});
+			$(window).resize();
+		});
+	</script>
+
+</html>

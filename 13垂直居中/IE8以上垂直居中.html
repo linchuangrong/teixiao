@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div#demo-5 {
+				height: 300px;
+				width: 600px;
+				margin: 0 auto;
+				border: 1px solid rgb(234, 56, 26);
+			}
+			
+			/*div#demo-5 div {
+				position: absolute;
+				top: 50%;
+				left: 0
+			}*/
+			
+			/*div#demo-5 p {
+				position: relative;
+				top: -50%
+			}*/
+			
+			div#main-wrapper>div#demo-5 {
+				display: table
+			}
+			
+			div#main-wrapper>div#demo-5>div {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main-wrapper">
+			<div id="demo-5">
+				<div>
+					<p>coLorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas dignissim diam eu sem. Proin nunc ante, accumsan sollicitudin, sodales at, semper sed, ipsum. Etiam orci. Vestibulum magna lectus, venenatis nec, tempus ac, dictum vel, lorem.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

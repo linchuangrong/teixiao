@@ -1,0 +1,19 @@
+body {
+	font-family: "微软雅黑";
+}
+
+.moveDiv{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+	height: 200px;
+	background: #5BC0DE;
+	color: #FFFFFF;
+}
+
+#can{
+	width: 200px;
+	height: 200px;
+	border: solid 1px #192853;
+}

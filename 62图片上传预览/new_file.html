@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="file" id="photo">
+		<div id="click" style="width: 200px; height: 200px; border: 1px solid #000;">
+			<img src="" alt="" style="display: none;width: 100%;height: 100%;">
+		</div>
+		<script>
+			document.getElementById('photo').addEventListener('change', function(e) {
+				var file = e.target.files[0];
+				console.log("文件大小"+file.size);
+				var reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onload = function(e) {
+					console.log("文件大小：" + e.total + "b");
+					if(e.total > 200 * 1024) {
+						alert('文件大小大于2M');
+						return;
+					}
+					var img = document.getElementById('click').getElementsByTagName("img")[0];
+					img.src = this.result;
+					img.style.display = "block";
+				}
+			});
+		</script>
+	</body>
+
+</html>

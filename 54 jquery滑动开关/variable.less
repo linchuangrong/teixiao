@@ -1,0 +1,71 @@
+@main-color: #ff3d3d;
+.after() {
+    clear: both;
+    display: table;
+    content: "";
+}
+.hover() {
+    color: @main-color;
+}
+.box-sizing() {
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    box-sizing: border-box;
+}
+/*变换*/
+.transform (@pattern) {
+    -webkit-transform: @pattern;
+    -moz-transform: @pattern;
+    -o-transform: @pattern;
+    -ms-transform: @pattern;
+    transform: @pattern;
+}
+/*背景图片大小*/
+.background-size(@pattern) {
+    -webkit-background-size: @pattern;
+    -moz-background-size: @pattern;
+    -ms-background-size: @pattern;
+    -o-background-size: @pattern;
+    background-size: @pattern;
+}
+/*文字超出部分隐藏*/
+.overflow-ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*动画*/
+.transition(@param) {
+    -webkit-transition: @param;
+    -moz-transition: @param;
+    -ms-transition: @param;
+    -o-transition: @param;
+    transition: @param;
+}
+/*圆角*/
+.border-radius(@param:0px) {
+    -moz-border-radius: @param;
+    -webkit-border-radius: @param;
+    border-radius: @param;
+}
+/*透明度*/
+.opacity(@param:1) {
+    /*filter:alpha(opacity=@param*100);*/
+    -moz-opacity: @param;
+    -webkit-opacity: @param;
+    opacity: @param;
+}
+/*阴影*/
+.box-shadow(@param, @argument) {
+    -webkit-box-shadow: @argument;
+    box-shadow: @argument;
+}
+/*动画*/
+.animation(@pattern) {
+    animation: @pattern;
+    -moz-animation: @pattern;
+    -webkit-animation: @pattern;
+    -o-animation: @pattern;
+}

@@ -1,0 +1,126 @@
+html {
+	font-size: 100px;
+}
+
+html,body,ul,li,h1,h2,h3,h4,h5,h6,p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	/*禁止选择复制*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+input {
+	height: 0.24rem;
+	line-height: 0.24rem;
+	border-radius: 0.05rem;
+	outline: none;
+}
+
+
+/*设置滚动条为透明start*/
+
+::-webkit-scrollbar {
+	background-color: rgba(255, 255, 255, 0);
+	height: 0px;
+	width: 0px;
+}
+/*设置滚动条为透明end*/
+
+/*placeholder颜色设置start*/
+
+input::-webkit-input-placeholder {
+	color: #398439;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: #EC971F;
+}
+/*placeholder颜色设置end*/
+
+@media only screen and (max-width:360px) {
+	html {
+		font-size: 100px !important;
+		background: goldenrod;
+	}
+}
+
+@media only screen and (min-width: 361px) and (max-width:400px) {
+	html {
+		font-size: 115px !important;
+		background: lightskyblue;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width:480px) {
+	html {
+		font-size: 125px !important;
+		background: cadetblue;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width:560px) {
+	html {
+		font-size: 150px !important;
+		background: goldenrod;
+	}
+}
+
+@media only screen and (min-width: 561px) and (max-width:640px) {
+	html {
+		font-size: 175px !important;
+		background: greenyellow;
+	}
+}
+
+@media only screen and (min-width: 641px) {
+	html {
+		font-size: 175px !important;
+		background: transparent;
+	}
+}
+
+
+/*清除ios输入框内阴影start*/
+
+input,
+textarea {
+	border: 0;
+	/* 方法1 */
+	-webkit-appearance: none;
+	/* 方法2 */
+}
+/*清除ios输入框内阴影end*/
+
+.color {
+	font-size: 0.14rem;
+}
+
+.scroll {
+	padding: 0px;
+	margin: 0px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #148544;
+}
+
+.scroll ul {
+	width: 100%;
+	height: 100%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.scroll ul li {
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	background: #00CCCC;
+	margin-right: 5%;
+}

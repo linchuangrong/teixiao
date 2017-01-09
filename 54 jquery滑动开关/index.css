@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "微软雅黑";
+}
+.main {
+  padding: 100px;
+  text-align: center;
+}
+.switch {
+  display: inline-block;
+  width: 90px;
+  height: 40px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  background: #fff;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.switch .switch-circle {
+  position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.switch .switch-text {
+  font-size: 14px;
+  line-height: 40px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+.switch .switch-text.switch-text-left {
+  /*本来应该是40px的，但发现35px更好看一点*/
+  padding-right: 35px;
+  color: #FFFFFF;
+  display: none;
+}
+.switch .switch-text.switch-text-right {
+  /*本来应该是40px的，但发现35px更好看一点*/
+  padding-left: 35px;
+  color: #666;
+  display: block;
+}
+.switch.active {
+  background-color: rgba(0, 184, 0, 0.8);
+}
+.switch.active .switch-circle {
+  /*位移的40px等于自身元素的宽度*/
+  -webkit-transform: translate(-40px, 0);
+  -moz-transform: translate(-40px, 0);
+  -o-transform: translate(-40px, 0);
+  -ms-transform: translate(-40px, 0);
+  transform: translate(-40px, 0);
+  margin-left: 100%;
+}
+.switch.active .switch-text-left {
+  display: block;
+}
+.switch.active .switch-text-right {
+  display: none;
+}
+/*# sourceMappingURL=index.css.map */

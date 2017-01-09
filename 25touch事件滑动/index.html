@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="address=no" />
+		<meta name="msapplication-config" content="none" />
+		<title>Document</title>
+		<link href="normalize.css" type="text/css" rel="stylesheet">
+		<style type="text/css">
+			body,
+			html {
+				height: 100%;
+				width: 100%;
+				font-family: "Microsoft Yahei"
+			}
+			
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0
+			}
+			
+			header,
+			footer {
+				left: 0;
+				width: 100%;
+				z-index: 2
+			}
+			
+			header {
+				top: 0;
+				height: 3rem;
+				background: #e62216;
+				padding: .5rem .5rem;
+				box-sizing: border-box;
+				position: fixed
+			}
+			
+			footer {
+				bottom: 0;
+				height: 3.5rem;
+				/*position: fixed;*/
+				background: #ddd;
+				box-sizing: border-box;
+				padding-top: .5rem
+			}
+			
+			.header_t,
+			.header_img,
+			.header_t span {
+				float: left
+			}
+			
+			header select {
+				display: block;
+				background: white;
+				width: 5rem;
+				height: 1rem;
+			}
+			
+			.header_img {
+				width: 2rem;
+				height: 2rem;
+				box-sizing: border-box;
+				padding: .1rem;
+				background: orange;
+			}
+			
+			.header_t span {
+				margin-left: .5rem;
+				line-height: 2rem;
+				color: #fff;
+			}
+			
+			.btn-select {
+				position: relative;
+				float: right;
+				display: block;
+				width: 5rem;
+				height: 2rem;
+				background-color: white;
+				color: #333;
+				text-align: center;
+				border-radius: .5rem
+			}
+			
+			option {
+				background: white
+			}
+			
+			option:hover {
+				background: #66ccff;
+			}
+			
+			.btn-select .cur-select {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 100%;
+				line-height: 2rem;
+				/*background: #f80 url(ico-arrow.png) no-repeat  center;*/
+			}
+			
+			footer a {
+				display: block;
+				margin: 0 auto;
+				height: 1.5rem;
+				line-height: 1.5rem;
+				width: 6rem;
+				background: url('./img/button1.png');
+				text-align: center;
+				padding: .5rem;
+				cursor: default;
+				border-radius: .5rem;
+				color: #fff;
+				background-size: cover
+			}
+			
+			footer a:active {
+				background: url('./img/button2.png');
+				color: red
+			}
+			
+			.btn-select select {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				color: #f80;
+			}
+			
+			.btn-select select option {}
+			
+			.container {
+				margin-top: 3rem;
+				/*margin-bottom: 3rem;*/
+				padding-bottom: .3rem
+			}
+			
+			.share {
+				width: 100%;
+				height: 3rem;
+				background: #ddd;
+				color: #e62216;
+			}
+			
+			.share span {
+				float: left;
+				text-indent: 1rem;
+				line-height: 3rem
+			}
+			
+			.share ul {
+				float: right;
+				display: block;
+				height: 100%;
+				margin: 0;
+				padding: .5rem;
+				box-sizing: border-box;
+			}
+			
+			.share ul li {
+				float: left;
+				display: block;
+				margin-right: .5rem;
+				width: 2rem;
+				height: 2rem;
+				background-color: #6cf;
+				box-sizing: border-box;
+				border-radius: .5rem;
+				overflow: hidden;
+				background-size: cover!important
+			}
+			
+			.share ul li a {
+				display: block;
+				width: 100%;
+				height: 100%
+			}
+			
+			.share ul li:hover {
+				border: 1px solid white;
+			}
+			
+			.share ul li:nth-child(1) {
+				background: url("./img/f.png");
+			}
+			
+			.share ul li:nth-child(2) {
+				background: url("./img/t.png");
+			}
+			
+			.share ul li:nth-child(3) {
+				background: url("./img/g.png");
+			}
+			
+			.flash {
+				margin-top: .3rem
+			}
+			
+			.flash span,
+			.flash b {
+				margin-top: .1rem;
+				display: inline-block;
+				text-align: center;
+				font-size: 80%
+			}
+			
+			.flash b {
+				font-size: 100%
+			}
+			
+			.flash span:nth-child(2),
+			.flash b {
+				width: auto
+			}
+			
+			.flash span:nth-child(1) {
+				width: 100%;
+			}
+			
+			.flashbox {
+				width: 13rem;
+				height: 25.6rem;
+				margin: 1rem auto .3rem;
+				background: url('./img/Nexus5.png');
+				background-size: cover
+			}
+			
+			.flash_inner {
+				overflow: hidden;
+				position: relative;
+				display: block;
+				width: 13rem;
+				height: 25.6rem;
+				margin: 1rem auto .5rem;
+			}
+			
+			.flash_inner li {
+				background-size: cover!important;
+				display: block;
+				float: left;
+				position: absolute;
+				width: 100%;
+				height: 100%
+			}
+			
+			.flash_inner li:nth-child(1) {
+				background: url("./img/1.png");
+				left: 0;
+				display: none;
+			}
+			
+			.flash_inner li:nth-child(2) {
+				background: url("./img/2.png");
+				display: none;
+			}
+			
+			.flash_inner li:nth-child(3) {
+				background: url("./img/3.png");
+				display: none;
+			}
+			
+			.flash_inner li:nth-child(4) {
+				background: url("./img/4.png");
+				display: none;
+			}
+			
+			.flash_inner li.active {
+				display: block
+			}
+			
+			.flash_c2 {
+				margin: 0 auto;
+				text-align: center;
+				width: 100%
+			}
+			
+			.index {
+				display: block;
+				margin: 0 auto;
+				width: 4rem;
+				height: 1rem;
+				border-radius: 1rem;
+				background: hsla(0, 0%, 0%, .6);
+			}
+			
+			.index li {
+				display: block;
+				width: 0.6rem;
+				height: 0.6rem;
+				margin: 0.2rem;
+				background: white;
+				border-radius: 100%;
+				float: left
+			}
+			
+			.bg-on {
+				background: #6cf!important
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div class="header_t">
+				<div class="header_img"></div>
+				<span>Tube Video Download</span>
+			</div>
+			<a class="btn-select" id="btn_select">
+				<span class="cur-select">English</span>
+				<select id="lang" onchange="listen_selection()">
+			<option>English</option>
+			<option>Chinese</option>
+			<option>es</option>
+			<option>pl</option>
+			<option>pt</option>
+			<option>fr</option>
+			<option>de</option>
+		</select>
+			</a>
+		</header>
+		<div class="container">
+			<div class="share">
+				<span id="share"></span>
+				<ul>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="flash">
+				<span id="flash_c1"></span><br/>
+				<span class="flash_c2" id="flash_c2"></span>
+				<div class="flashbox">
+					<ul class="flash_inner" id="flash_inner">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<ul class="index">
+					<li class="bg-on"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<footer>
+			<a id="down"></a>
+		</footer>
+	</body>
+	<script type="text/javascript" src="jquery.min.js"></script>
+
+	<script>
+		var data = {};
+		data['en'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for <b>Android</b>",
+			"down": "Download"
+		};
+		data['zh'] = {
+			"share": "分享 :",
+			"flash_c1": "使用<b>安卓版</b> Free Video Downloader 下载网上",
+			"flash_c2": "你想要的大部分视频",
+			"down": "下载"
+		};
+		data['pt'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for",
+			"down": "Download"
+		};
+		data['pl'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for",
+			"down": "Download"
+		};
+		data['de'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for",
+			"down": "Download"
+		};
+		data['fr'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for",
+			"down": "Download"
+		};
+		data['ru'] = {
+			"share": "share it:",
+			"flash_c1": "Download videos that you want from most of websites",
+			"flash_c2": "with Free Video Downloader for",
+			"down": "Download"
+		};
+		var time;
+		$(function() {
+			lang_change("en");
+			var x = setInterval(function() {
+				playNext()
+			}, 6000);
+			time = x;
+		})
+		var $$ = function(id) {
+			return document.getElementById(id);
+		}
+		window.onload = function() {
+			var btnSelect = $$("btn_select");
+			var curSelect = btnSelect.getElementsByTagName("span")[0];
+			var oSelect = btnSelect.getElementsByTagName("select")[0];
+			var aOption = btnSelect.getElementsByTagName("option");
+			oSelect.onchange = function() {
+				var text = oSelect.options[oSelect.selectedIndex].text;
+				curSelect.innerHTML = text;
+			}
+		}
+
+		function lang_change(lan) {
+			$('#share').html(data[lan].share);
+			$('#flash_c1').html(data[lan].flash_c1);
+			$('#flash_c2').html(data[lan].flash_c2);
+			$('#down').html(data[lan].down);
+		}
+		var sl = $("#lang");
+		sl.change(function() {
+			//选中select标签
+			switch (sl.find('option:selected').index()) {
+				case 0:
+					{
+						lang_change("en");
+						break;
+					}
+				case 1:
+					{
+						lang_change("zh");
+						break;
+					}
+				case 2:
+					{
+						lang_change("en");
+						break;
+					}
+				case 3:
+					{
+						lang_change("en");
+						break;
+					}
+				case 4:
+					{
+						lang_change("en");
+						break;
+					}
+				case 5:
+					{
+						lang_change("en");
+						break;
+					}
+				case 6:
+					{
+						lang_change("en");
+						break;
+					}
+			}
+		})
+
+		function playNext() {
+			if ($('.index').find('.bg-on').index() == 3) {
+				var a = $('.index').find('.bg-on').index();
+				$('.index').find('li').eq(0).addClass('bg-on').siblings().removeClass('bg-on');
+				$('.flash_inner').find('li').eq(a).fadeOut(500).removeClass('active');
+				$('.flash_inner').find('li').eq(0).fadeIn(500).addClass('active');
+			} else {
+				var a = $('.index').find('.bg-on').index();
+				$('.index').find('li').eq(a + 1).addClass('bg-on').siblings().removeClass('bg-on');
+				$('.flash_inner').find('li').eq(a).fadeOut(500).removeClass('active');
+				$('.flash_inner').find('li').eq(a).next().fadeIn(500).addClass('active');
+			}
+		}
+
+		function playPrev() {
+			if ($('.index').find('.bg-on').index() == 0) {
+				var a = $('.index').find('.bg-on').index();
+				$('.index').find('li').eq(3).addClass('bg-on').siblings().removeClass('bg-on');
+				$('.flash_inner').find('li').eq(a).fadeOut(500).removeClass('active');
+				$('.flash_inner').find('li').eq(3).fadeIn(500).addClass('active');
+			} else {
+				var a = $('.index').find('.bg-on').index();
+				$('.index').find('li').eq(a - 1).addClass('bg-on').siblings().removeClass('bg-on');
+				$('.flash_inner').find('li').eq(a).fadeOut(500).removeClass('active');
+				$('.flash_inner').find('li').eq(a).prev().fadeIn(500).addClass('active');
+			}
+		}
+		$(function() {
+			var startX, startY, endX, endY;
+			var showADID = 1;
+			document.getElementById("flash_inner").addEventListener("touchstart", touchStart, false);
+			document.getElementById("flash_inner").addEventListener("touchmove", touchMove, false);
+			document.getElementById("flash_inner").addEventListener("touchend", touchEnd, false);
+			document.getElementById("flash_inner").addEventListener("touchcancel", touchEnd, false);
+
+			function touchStart(event) {
+				var touch = event.touches[0];
+				startY = touch.pageY;
+				startX = touch.pageX;
+			}
+
+			function touchMove(event) {
+				var touch = event.touches[0];
+				endY = (startY - touch.pageY);
+				endX = touch.pageX;
+				/*if($(window).scrollTop()>=$(document).height()-$(window).height()){event.preventDefault();}*/
+			}
+
+			function touchEnd(event) {
+				var distance_X = endX - startX;
+				if (distance_X > 50) {
+					clearInterval(time);
+					playPrev();
+					time = setInterval(function() {
+						playPrev()
+					}, 6000);
+				}
+				if (distance_X < -50) {
+					clearInterval(time);
+					playNext();
+					time = setInterval(function() {
+						playNext()
+					}, 6000);
+				}
+			}
+
+			function touchCancel(event) {
+				var distance_X = endX - startX;
+				if (distance_X > 50) {
+					clearInterval(time);
+					playPrev();
+					time = setInterval(function() {
+						playPrev()
+					}, 6000);
+				}
+				if (distance_X < -50) {
+					clearInterval(time);
+					playNext();
+					time = setInterval(function() {
+						playNext()
+					}, 6000);
+				}
+			}
+		})
+	</script>
+
+</html>

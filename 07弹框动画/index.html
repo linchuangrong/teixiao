@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>circle</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+
+	<body>
+		
+		<button type="button" class="btn btn-info" onclick="toggleAlertBox()">显示/隐藏</button>
+		
+		<div class="shadeDiv" style="display: none;"></div>
+
+		<div id="alertBox" class="alertBox panel panel-info">
+			<div class="panel-heading ">
+				<h3 class="panel-title">提示</h3>
+			</div>
+			<div class="panel-body">
+				<div class="content">
+					确定上传吗？
+				</div>
+				<div class="align_right">
+					<button type="button" class="btn btn-info btn-md" onclick="toggleAlertBox()">
+						<span class="glyphicon glyphicon-ok"></span>&nbsp;确定
+					</button>
+					<button type="button" class="btn btn-info btn-md" onclick="toggleAlertBox()">
+						<span class="glyphicon glyphicon-remove"></span>&nbsp;取消
+					</button>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.lazyload.js"></script>
+		<style type="text/css">
+			div.border-radius {
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+				width: 180px;
+				height: 180px;
+				border-radius: 180px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div class="border-radius">
+				<img class="lazy" data-original="01.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="02.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="03.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="01.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="02.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="03.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="01.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="02.png" width="180" />
+			</div>
+			<div class="border-radius">
+				<img class="lazy" data-original="03.png" width="180" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$("img.lazy").lazyload({
+				placeholder: "grey.gif",
+				threshold: 0,
+				failure_limit: 2,
+				effect: "fadeIn",
+				container: window,
+				event: "scroll"
+			});
+		});
+	</script>
+
+</html>

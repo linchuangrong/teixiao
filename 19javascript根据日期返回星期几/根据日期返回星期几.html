@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>根据日期返回星期几</title>
+		<script type="text/javascript" language="JavaScript">
+			
+			var weekArray = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+			
+			myyear=new Date().getFullYear();//获取年份
+			mymonth=new Date().getMonth();//获取当前月份,不过此处是0-11，而非1-12
+			
+			var mydate=new Date();//今天日期
+			//var mydate=new Date(myyear,mymonth-1,1);//设置上一个月份的1日。
+			
+			var xingqi=weekArray[mydate.getDay()];
+			alert(xingqi);
+			
+			//格式化日期输出
+			function formatTime(date){
+				return date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日";
+			}
+			
+			alert(formatTime(mydate));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

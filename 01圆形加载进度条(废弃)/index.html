@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML5 Canvas发光Loading动画DEMO演示</title>
+		<style>
+			body {
+				background: #FFF;
+			}
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+			canvas#loading {
+				display: block;
+				margin: 0 auto;
+			}
+			#shadeDiv {
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				z-index: 998;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.8);
+			}
+			#circleDiv {
+				position: fixed;
+				z-index: 999;
+				text-align: center;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script src="js/prefixfree.min.js"></script>
+	</head>
+
+	<body>
+		来打我啊
+		<div id="shadeDiv" style="display: none;"></div>
+		<div id="circleDiv" style="display: none;">
+			<canvas id="loading"></canvas>
+			<div style="text-align:center;clear:both;color: #FFFFFF;font-size: 12px;">加载中，请稍等......</div>
+		</div>
+		
+		
+		<script src='js/jquery.js'></script>
+		<script src="js/index.js"></script>
+		
+	</body>
+
+</html>

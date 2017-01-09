@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="format-detection" content="address=no" />
+		<meta name="msapplication-config" content="none" />
+		<title></title>
+		<style type="text/css">
+			#flash_inner {
+				width: 300px;
+				height: 400px;
+				background: #148544;
+				margin: 10px auto 0 auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="flash_inner"></div>
+		<script>
+			var startX, startY, endX, endY;
+			document.getElementById("flash_inner").addEventListener("touchstart", touchStart, false);
+			document.getElementById("flash_inner").addEventListener("touchmove", touchMove, false);
+			document.getElementById("flash_inner").addEventListener("touchend", touchEnd, false);
+			document.getElementById("flash_inner").addEventListener("touchcancel", touchEnd, false);
+
+			function touchStart(event) {
+				var touch = event.touches[0];
+				startY = touch.pageY;
+				startX = touch.pageX;
+			}
+
+			function touchMove(event) {
+				var touch = event.touches[0];
+				endX = touch.pageX;
+				endY = touch.pageY;
+				//阻止默认事件，防止滑动时，导致body的滚动条也滑动，自己考虑是否要下面这句代码，可要可不要
+				event.preventDefault();
+			}
+
+			function touchEnd(event) {
+				var distance_X = endX - startX;
+				var distance_Y = endY - startY;
+				console.log("水平移动的距离：" + distance_X);
+				console.log("垂直移动的距离：" + distance_Y);
+			}
+		</script>
+	</body>
+
+</html>

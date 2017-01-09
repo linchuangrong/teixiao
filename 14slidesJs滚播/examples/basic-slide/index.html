@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>SlidesJS Basic Code Example</title>
+		<meta name="description" content="SlidesJS is a simple slideshow plugin for jQuery. Packed with a useful set of features to help novice and advanced developers alike create elegant and user-friendly slideshows.">
+		<meta name="author" content="Nathan Searles">
+		<meta name="viewport" content="width=device-width">
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#slides {
+				display: none;
+				position: relative;
+			}
+			
+			.container {
+				width: 500px;
+				height: 500px;
+				background: #005580;
+				margin: 0 auto;
+			}
+			
+			.slides-item {
+				display: block;
+			}
+			
+			.slides-item img {
+				border: 0;
+				width: 100%;
+				display: block;
+			}
+			/*小圆圈*/
+			
+			.slidesjs-pagination {
+				width: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				position: absolute;
+				bottom: 15px;
+				left: 0;
+				z-index: 10;
+			}
+			
+			.slidesjs-pagination li {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				font-size: 0px;
+				margin: 5px;
+			}
+			
+			.slidesjs-pagination li a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: #FFFFFF;
+			}
+			
+			.slidesjs-pagination li a.active {
+				background-color: #22ff00;
+			}
+			/*左右按钮*/
+			
+			.slidesjs-navigation {
+				position: absolute;
+				height: 60px;
+				width: 60px;
+				background-color: rgba(255, 255, 255, .3);
+				display: block;
+				top: 50%;
+				transform: translate(0, -30px);
+				z-index: 20;
+				font-size: 0;
+			}
+			
+			.slidesjs-navigation.slidesjs-previous {
+				left: 0;
+			}
+			
+			.slidesjs-navigation.slidesjs-next {
+				right: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div id="slides">
+				<a href="#" class="slides-item"><img src="img/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/"></a>
+				<a href="#" class="slides-item"><img src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/"></a>
+				<a href="#" class="slides-item"><img src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/"></a>
+				<a href="#" class="slides-item"><img src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/"></a>
+			</div>
+		</div>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.slides.min.js"></script>
+		<script>
+			$(function() {
+				$('#slides').slidesjs({
+					width: 940,
+					height: 528,
+					play: {
+						active: true,
+						auto: true,
+						interval: 4000,
+						swap: true
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

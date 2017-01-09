@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
+
+	<body>
+		<div class="main">
+			<!--一个switch开关 begin-->
+			<div class="switch">
+				<span class="switch-text switch-text-left">关闭</span>
+				<div class="switch-circle"></div>
+				<span class="switch-text switch-text-right">开启</span>
+			</div>
+			<!--一个switch开关 end-->
+		</div>
+		
+		<!--js脚本 begin-->
+		<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".switch").on("click",function(){
+					$(this).toggleClass("active");
+				})
+			});
+		</script>
+		<!--js脚本 end-->
+	</body>
+
+</html>

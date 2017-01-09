@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>circle</title>
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		<div class="circle">
+			<div class="pie_left">
+				<div class="left"></div>
+			</div>
+			<div class="pie_right">
+				<div class="right"></div>
+			</div>
+			<div class="mask"><span>30</span>%</div>
+		</div>
+		<div class="circle">
+			<div class="pie_left">
+				<div class="left"></div>
+			</div>
+			<div class="pie_right">
+				<div class="right"></div>
+			</div>
+			<div class="mask"><span>50</span>%</div>
+		</div>
+		<div class="circle">
+			<div class="pie_left">
+				<div class="left"></div>
+			</div>
+			<div class="pie_right">
+				<div class="right"></div>
+			</div>
+			<div class="mask"><span>75</span>%</div>
+		</div>
+
+		<div class="circle">
+			<div class="pie_left">
+				<div class="left"></div>
+			</div>
+			<div class="pie_right">
+				<div class="right"></div>
+			</div>
+			<div class="mask"><span>100</span>%</div>
+		</div>
+
+		<script>
+			$(function() {
+				$(".circle").each(function(index, ele) {
+					var num = $(this).find("span").text() * 3.6;
+					if (num <= 180) {
+						//最后一个参数translateZ(0)是解决rotate产生的锯齿
+						$(this).find(".pie_right .right").css("transform", "rotate(" + num + "deg) translateZ(0)");
+					} else {
+						$(this).find(".pie_right .right").css("transform", "rotate(180deg) translateZ(0)");
+						rotateLeft($(this), num);
+					}
+				});
+				
+				//左部分的延迟旋转
+				function rotateLeft(obj, num) {
+					var _this = $(obj);
+					//原来旋转180度所需要的时间
+					var oldTime=_this.find(".pie_left .left").css("transition-duration");
+					//算出原来旋转180度的毫秒时间
+					oldTime=oldTime.substring(0,oldTime.length-1)*1000;
+					//一角度，所花的时间 1000毫秒/180度
+					var time1 = oldTime / 180;
+					//计算：剩余度数旋转所需要的时间（单位：毫秒）
+					var newTime = (num - 180) * (time1);
+					setTimeout(function() {
+						//修改动画样式
+						_this.find(".pie_left .left").css("transition", "all " + newTime / 1000 + "s").css("transition-timing-function","ease-out");
+						//执行动画
+						_this.find(".pie_left .left").css("transform", "rotate(" + (num - 180) + "deg) translateZ(0)");
+					}, oldTime);
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="loadDiv" style="width: 400px;height: 400px;border: 1px solid #245269;"></div>
+		<script type="text/javascript">
+			var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			console.log("宽度：" + w + "     高度：" + h);
+			console.log($(document).width());
+		</script>
+		<div id="mydiv">
+			<p></p>
+			<p><a>435</a></p>
+			<p></p>
+		</div>
+		<script type="text/javascript">
+			var aaa=$("#mydiv").find("p").eq(1).html();
+			console.log(aaa);
+		</script>
+	</body>
+
+</html>

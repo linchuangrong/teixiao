@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>html5拖放</title>
+		<script type="text/javascript" src="index.js"></script>
+		<style type="text/css">
+			.clear {
+				height: 0;
+				font-size: 0px;
+				line-height: 0px;
+				overflow: hidden;
+				clear: both;
+			}
+			
+			.box {
+				width: 300px;
+				height: 300px;
+			}
+			
+			#box1 {
+				background-color: #269ABC;
+				float: left;
+			}
+			
+			#box2 {
+				background-color: #C0A16B;
+				float: left;
+			}
+			
+			img {
+				width: 50px;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box1" class="box"></div>
+		<div id="box2" class="box"></div>
+		<div class="clear"></div>
+		<img id="img1" src="sina.png" draggable="true" />
+		<img id="img2" src="tx.png" draggable="true" />
+		<img id="img3" src="weixin.png" draggable="true" ondragstart="dragstart(event)" />
+	</body>
+
+</html>

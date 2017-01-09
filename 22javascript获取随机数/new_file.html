@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+	<script type="text/javascript">
+		/**
+		 * mask:返回某指定范围之间的随机整数
+		 * 比如function(0,2),则返回0，1，2三个整数之间的随机一个
+		 * @param min 最小值
+		 * @param max 最大值
+		 */
+		function getColorIndex(min, max) {
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+	</script>
+
+</html>

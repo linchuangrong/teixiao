@@ -1,0 +1,143 @@
+body {}
+
+.container {
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	position: relative;
+	margin: 50px auto;
+}
+
+.wrapper {
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.container .left {
+	left: 0;
+}
+
+.container .right {
+	right: 0;
+}
+
+.circleProgress {
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	border: 20px solid transparent;
+	border-radius: 50%;
+	top: 0;
+}
+
+.rightCircle {
+	border-top: 20px solid #E70F23;
+	border-right: 20px solid #E70F23;
+	right: 1px;
+	/*right如果是0，不知道为什么会产生一条小线*/
+	transform: rotate(45deg);
+	animation: circleRight 3s linear infinite;
+	-webkit-transform: rotate(45deg);
+	-webkit-animation: circleRight 3s linear infinite;
+}
+
+.leftCircle {
+	border-left: 20px solid #E70F23;
+	border-bottom: 20px solid #E70F23;
+	left: 1px;/*left如果是0，不知道为什么会产生一条小线*/
+	transform: rotate(45deg);
+	animation: circleLeft 3s linear infinite;
+	-webkit-transform: rotate(45deg);
+	-webkit-animation: circleLeft 3s linear infinite;
+}
+
+@keyframes circleRight {
+	0% {
+		transform: rotate(45deg);
+		border-top: 20px solid #E70F23;/*红色*/
+		border-right: 20px solid #E70F23;
+	}
+	50%{
+		transform: rotate(225deg);
+		border-top: 20px solid #FFCC00;/*橙色*/
+		border-right: 20px solid #FFCC00;
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+	}
+	100% {
+		transform: rotate(225deg);
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+	}
+}
+
+@keyframes circleLeft {
+	0%{
+		transform: rotate(45deg);
+		border-left: 20px solid #E70F23;/*红色*/
+		border-bottom: 20px solid #E70F23;
+	}
+	50% {
+		transform: rotate(45deg);
+		border-left: 20px solid #FFCC00;/*橙色*/
+		border-bottom: 20px solid #FFCC00;
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+	}
+	100% {
+		transform: rotate(225deg);
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+	}
+}
+
+@-webkit-keyframes circleRight {
+	0% {
+		-webkit-transform: rotate(45deg);
+		border-top: 20px solid #E70F23;/*红色*/
+		border-right: 20px solid #E70F23;
+	}
+	50%{
+		-webkit-transform: rotate(225deg);
+		border-top: 20px solid #FFCC00;/*橙色*/
+		border-right: 20px solid #FFCC00;
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+	}
+	100% {
+		-webkit-transform: rotate(225deg);
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+	}
+}
+
+@-webkit-keyframes circleLeft {
+	0%{
+		-webkit-transform: rotate(45deg);
+		border-left: 20px solid #E70F23;/*红色*/
+		border-bottom: 20px solid #E70F23;
+	}
+	50% {
+		-webkit-transform: rotate(45deg);
+		border-left: 20px solid #FFCC00;/*橙色*/
+		border-bottom: 20px solid #FFCC00;
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+	}
+	100% {
+		-webkit-transform: rotate(225deg);
+		border-left: 20px solid #27AE60;/*绿色*/
+		border-bottom: 20px solid #27AE60;
+		border-top: 20px solid #27AE60;/*绿色*/
+		border-right: 20px solid #27AE60;
+	}
+}

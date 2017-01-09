@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="loadDiv" style="width: 400px;height: 400px;border: 1px solid #245269;text-decoration: line-through;">&nbsp;</div>
+		<button onclick="loadDiv1()">加载html1</button>
+		<button onclick="loadDiv2()">加载html2</button>
+		<button onclick="alert1()">alert1</button>
+		<button onclick="alert2()">alert2</button>
+		<button onclick="alert1_1()">alert1_1</button>
+		<script type="text/javascript">
+			/*
+			1：load进来的html附带的js，会一直存在本页面
+			2：如果子html所附带的js是$(document).ready();ready()里面的var定义的对象，会全部失效
+			*/
+			loadDiv1 = function() {
+				console.log("html1");
+				$("#loadDiv").load("html1.html");
+			}
+			var loadDiv2 = function() {
+				console.log("html2");
+				$("#loadDiv").load("html2.html");
+			}
+		</script>
+	</body>
+
+</html>

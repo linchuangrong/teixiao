@@ -1,0 +1,23 @@
+/*function Tab(id) {
+				this.aLi = id.getElementsByTagName("li");
+				this.oDiv = id.getElementsByTagName("div");
+			}
+			Tab.prototype.init = function() {
+				var obj = this; //tab实例化对象
+				for(var i = 0; i < obj.aLi.length; i++) {
+					obj.aLi[i].index = i; //给li添加一个索引
+					obj.aLi[i].onclick = function() {
+						obj.fnClick(this); //this当前点击的元素li
+					}
+
+				}
+			}
+			Tab.prototype.fnClick = function(clickObj) {
+				console.log(this);  //li
+				for(var i = 0; i < this.aLi.length; i++) {
+					this.aLi[i].className = "";
+					this.oDiv[i].style.display = "none";
+				}
+				clickObj.className = "active";
+				this.oDiv[clickObj.index].style.display = "block";
+			};*/
